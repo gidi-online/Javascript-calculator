@@ -59,6 +59,14 @@ function performOperation(e) {
             evalStringArray.push('/');
             break;      
 
+            case '*':
+                pendingVal = displayVal;
+                displayVal = "0";
+                displayValElement.innerText = displayVal;
+                evalStringArray.push(pendingVal);
+                evalStringArray.push('*');
+                break;   
+
         case '=':
             evalStringArray.push(displayVal);
             var evaluation = eval(evalStringArray.join(` `));
